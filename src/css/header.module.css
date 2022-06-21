@@ -1,0 +1,13 @@
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-bottom: 1em;
+    font-family: 'Playfair Display', serif;
+    color: #89DDff;
+    width: 100%;
+    height: fit-content;
+}
+

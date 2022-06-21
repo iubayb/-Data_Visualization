@@ -1,0 +1,418 @@
+
+body{
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+.bgWrap {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+h1,h2,h3 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    }
+
+.background{
+    z-index: 0;
+    opacity: 40%;
+}
+
+.selected{
+    display: none;
+}
+
+.top-container{
+    display: flex;
+    margin: 0 1em 0 1em;
+    
+}
+
+pre{
+    margin-top: 0;
+    width: 80%;
+}
+
+/*******************Navbar******************/
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+}
+
+.css-11lq3yg-MuiGrid-root{
+    cursor: pointer;
+}
+
+.css-h4y409-MuiList-root{
+    padding-bottom: 90px;
+    font-size: 1em;
+}
+
+/*******************Top Description**********************/
+
+.top-description {
+    display: flex;
+    height: fit-content;
+    position: relative;
+    z-index: 1;
+	font-size: 1.15em;
+	text-align: center;
+    width: 40%;
+    padding: 7px;
+}
+
+/*******************Button**********************/
+
+.button-grid{
+    background-color: black;
+    color: white;
+    
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.button-box{
+    background-color: black;
+    color: white;
+    height: fit-content;
+    border-radius: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.css-11qr2p8-MuiButtonBase-root-MuiButton-root{
+    border-radius: 30px;
+    background-color: white;
+    color: #0d0c22;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.css-1p823my-MuiListItem-root{
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 3.3em;
+}
+
+/*******************SLIDER******************/
+
+.css-1aznpnh-MuiSlider-root{
+    height: 14px;
+}
+
+.css-187mznn-MuiSlider-root{
+    height: 20px;
+    padding-top: 0;
+}
+
+.css-1gv0vcd-MuiSlider-track {
+    background-color: red;
+}
+
+.css-14pt78w-MuiSlider-rail{
+    background-color: white;
+    opacity: 1;
+}
+
+.css-eg0mwd-MuiSlider-thumb{
+    background-color: white;
+}
+
+.css-ofrcno-MuiGrid-root>.MuiGrid-item{
+    color: white;
+}
+
+.css-1eoe787-MuiSlider-markLabel{
+    color: white;
+}
+
+/*********************Tubes********************/
+
+.tube-wrap{
+    display: flex;
+}
+
+.tubes { 
+  margin-inline: auto; 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 2rem; 
+  justify-content: center 
+}
+
+.tube {
+    --width: 4rem;
+    --skew: .5rem;
+    --tube-color: #fff;
+    --fill-color: black; 
+    --anim-duration: 1s;
+    width: var(--width);
+    aspect-ratio: 1/4.5;
+    margin-top: var(--skew);
+    border-top-left-radius: 50% var(--skew);
+    border-top-right-radius: 50% var(--skew);
+    border-bottom-left-radius: 50% var(--skew);
+    border-bottom-right-radius: 50% var(--skew);
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+    position: relative;
+}
+
+.tube::before{
+    --blur: 4px;
+    content: '';
+    position: absolute;
+    width: calc(100% + var(--width) * 0.25);
+    z-index: -1;
+    right: var(--blur);
+    bottom: 0;
+    height: calc(var(--skew) * 2);
+    background: rgb(0 0 0 / .25);
+    border-radius: inherit;
+    filter: blur(var(--blur));
+}
+
+.cap-text{
+    width: 100%;
+    color: var(--fill-color);
+    background-color: rgb(0 0 0 / .1);
+    padding-top: calc(var(--skew) + var(--width) * .05);
+    padding-bottom: calc(var(--width) * .1);
+    display: grid;
+    place-content: center;
+    margin-top: calc(var(--skew) * -.5);
+    border-bottom-left-radius: 50% var(--skew);
+    border-bottom-right-radius: 50% var(--skew);
+    --mask-image: radial-gradient( ellipse 100% calc(var(--skew) * 2) at center top, transparent calc(50% - 1px), black calc(50% + 1px));
+    -webkit-mask-image: var(--mask-image);
+    mask-image: var(--mask-image);
+    font-size: x-large;
+    font-style: normal;
+}
+
+.current-element {
+    --fill-color: red; 
+    --anim-duration: 2s;
+    animation-name: move;
+    animation-duration: 5s;
+}
+
+.swap-container{
+    z-index: 5;
+   position: absolute;
+   top: 80px;
+   left: 55px;
+   background-color: black;
+   width: inherit;text-align: center;
+}
+
+.swap::before{
+   font-size: xx-large;
+   font-style: normal;
+   content: "SWAP";
+   color: white;
+   
+  
+}
+
+
+@keyframes move{
+    100%{top: 20px}
+}
+
+.current-element-text::before{
+    content: "arr[i]";  
+    position: relative;
+    top: 4px;
+}
+
+.next-element{
+    --fill-color: blue;
+    animation-name: move;
+    animation-duration: 5s ;
+}
+
+.next-element-text::before{
+    content: "arr[i + 1]"; 
+    position: relative;
+    top: 4px;
+}
+
+.cap{
+    --cap-height: calc(var(--width) * .4);
+    height: calc(var(--cap-height) + var(--skew));
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    background-color: var(--tube-color);
+    background-image: linear-gradient(to right, rgb(0 0 0 / .25), transparent 50%);
+    position: relative;
+    z-index: 2;
+    color: var(--fill-color);
+    display: grid;
+    place-content: center;
+    font-size: x-large;
+    font-style: normal;
+}
+
+
+.cap::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(var(--skew) * 2);
+    background-color: var(--tube-color);
+    background-image: linear-gradient(to left, rgb(0 0 0 / .25), transparent);
+    border-radius: 50%;
+    top: calc(var(--skew) * -1);
+}
+
+.base{
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    background-color: var(--tube-color);
+    background-image: linear-gradient(to right, rgb(0 0 0 / .25), transparent 50%);
+    position: relative;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    /* padding-top: calc(var(--width) * 0.1 + var(--skew));
+    padding-bottom: calc(var(--width) * .1); */
+    overflow: hidden;
+}
+
+.text{
+    width: 100%;
+    color: var(--fill-color);
+    background-color: rgb(0 0 0 / .1);
+    padding-top: calc(var(--skew) + var(--width) * .1);
+    padding-bottom: calc(var(--width) * .1);
+    display: grid;
+    place-content: center;
+    margin-top: calc(var(--skew) * -.5);
+    border-bottom-left-radius: 50% var(--skew);
+    border-bottom-right-radius: 50% var(--skew);
+    --mask-image: radial-gradient( ellipse 100% calc(var(--skew) * 2) at center top, transparent calc(50% - 1px), black calc(50% + 1px));
+    -webkit-mask-image: var(--mask-image);
+    mask-image: var(--mask-image);
+    line-height: 1;
+    font-size: calc(var(--width) * .4);
+    position: relative;
+}
+
+.fill{
+    margin-top: calc(var(--skew) * -1);
+    color: white;
+    padding-top: 50%;
+    position: relative;
+    z-index: 1;
+    --glas-gradient:
+        linear-gradient(
+            to right,
+            rgb(0 0 0 / .25),
+            transparent 10% 15%,
+            rgb(255 255 255 / .5) 20%,
+            transparent 50% 90%,
+            rgb(0 0 0 / .125) 
+        );
+    background-image: var(--glas-gradient);
+}
+
+.fill::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    --fill-start: var(--skew);
+    --fill-end: calc(var(--percent) * 1% + var(--skew));
+    height: var(--fill-start);
+    background-color: var(--fill-color);
+    bottom: calc(var(--skew) * -1);
+    border-bottom-left-radius: 50% var(--skew);
+    border-bottom-right-radius: 50% var(--skew);
+    background-image: 
+        var(--glas-gradient),
+        radial-gradient(
+            ellipse 100% calc(var(--skew) * 2) at center calc(100% - var(--skew)), 
+            rgb(255 255 255 /.125) calc(50% - 1px), 
+            transparent 50%),
+        linear-gradient(
+            to right, 
+            rgb(0 0 0 / .25), 
+            transparent 50% 70%, 
+            rgb(0 0 0 / .25));
+  animation: fill-before var(--anim-duration) linear forwards
+}
+
+.fill::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: calc(var(--skew) * 2);
+    background-color: var(--fill-color);
+    border-radius: 50%;
+    --fill-start: calc(var(--skew) * -1);
+    --fill-end: calc(var(--percent) * 1% - var(--skew));
+    bottom: var(--fill-start);
+    background-image: 
+        var(--glas-gradient),
+        linear-gradient(to left, rgb(0 0 0 / .25), transparent 50%);
+  animation: fill-after var(--anim-duration) linear forwards
+}
+
+@keyframes fill-before{ to { height: var(--fill-end)}}
+@keyframes fill-after { to { bottom: var(--fill-end)}}
+
+.tubes {
+  gap: calc(2vw + 0.2rem);
+}
+.tube {
+  --width: calc(8vw + 0.6rem); 
+  --skew: calc(1vw + 0.1rem);
+}
+
+/****************Thought Bubble********************/
+
+.thought-bubble {
+    position: relative;
+    z-index: 1;
+	background: #a3a5a6;
+	border-radius: 10px;
+	font-size: 1.15em;
+	text-align: center;
+    width: auto;
+}
+
+.pointer {
+	height: 40px;
+	width: 40px;
+	background: #a3a5a6;
+	margin: 0 auto;
+	transform: rotate(45deg);
+	border-radius: 0 0 12px 0;
+	margin-top: -22px;
+	position: relative;
+	right: 20em
+}
+
+.var-container{
+    font-size: x-large;
+    color: #fe8c52;
+    z-index: 5;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.array-span{
+    margin-right: 35px;
+}

@@ -1,0 +1,61 @@
+
+
+.bar {
+  --width: calc(8vw + 0.6rem); /* (320,24)(1920,96) */;
+  --skew: calc(1vw + 0.1rem); /* (320,4)(1920,16) */;
+}
+
+.bubbleContainer{
+    display: flex;
+    height: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.leftDisplay{
+    display: flex;
+    width: 100%;
+}
+
+.rightDisplay{
+    width: 25%;
+}
+
+.newArray{
+    display: flex;
+    color: #0d0c22;
+    font-size:x-large;
+    line-height: normal;
+    letter-spacing: 10px;
+    justify-content: center;
+}
+
+
+.row{
+    display: flex;
+    justify-content: center;
+    height: 20em;
+    width: 100%;
+    gap:1em;
+}
+
+.textTwo{
+    font-size: large;
+    color: blue;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+
+.bottomText{
+    font-size: large;
+    color: greenyellow;
+    margin: 0;
+}
+
+.bottomTextTwo{
+    font-size:large;
+    color: orange;
+    margin: 0;
+}
+
